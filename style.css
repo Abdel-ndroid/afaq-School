@@ -1,17 +1,27 @@
-/* =========================================================
-   AFAQ AL MUSTAQBAL - Futuristic Glassmorphism UI
-   ========================================================= */
+
+/* =====================================================
+   AFAQ SCHOOL — Modern Institutional Identity
+   ===================================================== */
 
 :root {
-    --bg-dark: #070c14;
-    --card-bg: rgba(13, 22, 38, 0.65);
-    --card-border: rgba(0, 229, 255, 0.18);
-    --primary-blue: #00e5ff;
-    --primary-green: #00ff88;
-    --text-main: #f0f6fc;
-    --text-muted: #8b949e;
+    --blue: #0B4F8A;
+    --blue-dark: #083B68;
+    --green: #58A93D;
+    --gold: #D8B13F;
+
+    --white: #FFFFFF;
+    --background: #F7F9FC;
+    --surface: #FFFFFF;
+    --text: #18324A;
+    --muted: #718096;
+
+    --border: #E6ECF2;
+    --shadow: 0 8px 30px rgba(11, 79, 138, 0.07);
+
     --font-ar: 'Tajawal', 'Tahoma', sans-serif;
-    --font-en: 'Orbitron', sans-serif;
+    --font-en: 'Inter', 'Arial', sans-serif;
+
+    --radius: 18px;
 }
 
 * {
@@ -27,169 +37,143 @@ html {
 body {
     min-height: 100vh;
     font-family: var(--font-ar);
-    background-color: var(--bg-dark);
-    background-image: 
-        radial-gradient(circle at 10% 10%, rgba(0, 229, 255, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(0, 255, 136, 0.08) 0%, transparent 40%);
-    color: var(--text-main);
-    line-height: 1.6;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
     overflow-x: hidden;
 }
 
-/* Background Canvas */
+/* Remove old futuristic animation */
 #bg-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
+    display: none;
 }
+
+/* ================= Main Layout ================= */
 
 .page {
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 480px;
+    max-width: 560px;
     min-height: 100vh;
     margin: 0 auto;
-    padding: 36px 20px 28px;
-    animation: fadeIn 0.8s ease-out;
+    padding: 40px 22px 30px;
+    animation: fadeIn 0.7s ease-out;
 }
 
 /* ================= Header ================= */
+
 .header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 38px;
 }
 
 .logo-wrapper {
     position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 20px;
+    width: 145px;
+    height: 145px;
+    margin: 0 auto 22px;
+    padding: 10px;
+    background: var(--white);
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
 }
 
 .logo-glow {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
-    filter: blur(20px);
-    opacity: 0.5;
-    animation: pulse 3s infinite alternate;
+    display: none;
 }
 
 .logo {
-    position: relative;
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 50%;
-    border: 2px solid var(--card-border);
-    background: var(--bg-dark);
-    padding: 6px;
-    backdrop-filter: blur(10px);
+    background: var(--white);
 }
 
 .header h1 {
-    font-size: 22px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 30%, var(--primary-blue) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1.4;
+    font-size: 27px;
+    font-weight: 900;
+    color: var(--blue);
+    line-height: 1.5;
     margin-bottom: 4px;
 }
 
 .english-name {
     direction: ltr;
     font-family: var(--font-en);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: 3px;
-    color: var(--primary-green);
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
-    margin-bottom: 12px;
+    color: var(--green);
+    margin-bottom: 15px;
 }
 
 .slogan {
-    font-size: 14px;
-    color: var(--text-muted);
-    font-weight: 500;
     display: inline-block;
-    padding: 4px 16px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 7px 18px;
+    border-radius: 30px;
+    background: #EDF4FA;
+    border: 1px solid #DCE9F3;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 600;
 }
 
-/* ================= Contact Buttons ================= */
+/* ================= Contact Section ================= */
+
 .contact-section {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    margin-bottom: 32px;
+    gap: 13px;
+    margin-bottom: 38px;
 }
 
 .contact-button {
     position: relative;
-    min-height: 64px;
+    min-height: 76px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 12px 18px;
-    border-radius: 16px;
+    padding: 13px 18px;
+    border-radius: var(--radius);
     text-decoration: none;
-    color: var(--text-main);
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    backdrop-filter: blur(12px);
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.contact-button::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.contact-button.whatsapp::before {
-    background: linear-gradient(90deg, rgba(0, 229, 255, 0.15), transparent);
-}
-
-.contact-button.phone::before {
-    background: linear-gradient(90deg, rgba(0, 255, 136, 0.15), transparent);
+    color: var(--blue);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
 }
 
 .contact-button:hover {
-    transform: translateY(-3px) scale(1.01);
-    border-color: rgba(0, 229, 255, 0.5);
-    box-shadow: 0 10px 25px -5px rgba(0, 229, 255, 0.25);
-}
-
-.contact-button:hover::before {
-    opacity: 1;
+    transform: translateY(-3px);
+    border-color: var(--blue);
+    box-shadow: 0 12px 28px rgba(11, 79, 138, 0.12);
 }
 
 .button-icon {
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 13px;
+    background: #EDF4FA;
+    color: var(--blue);
 }
 
-.whatsapp .button-icon { stroke: var(--primary-blue); stroke-width: 2; }
-.phone .button-icon { stroke: var(--primary-green); stroke-width: 2; }
+.whatsapp .button-icon {
+    background: #EFF8EB;
+    color: var(--green);
+}
+
+.phone .button-icon {
+    background: #EDF4FA;
+    color: var(--blue);
+}
 
 .button-text {
     flex-grow: 1;
@@ -199,189 +183,189 @@ body {
 .button-text strong {
     display: block;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .button-text small {
     display: block;
-    font-size: 12px;
-    color: var(--text-muted);
     font-family: var(--font-en);
+    font-size: 12px;
+    color: var(--muted);
     direction: ltr;
     text-align: right;
 }
 
 .button-arrow {
-    font-size: 18px;
-    color: var(--text-muted);
-    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 20px;
+    color: var(--green);
+    transition: transform 0.25s ease;
 }
 
 .contact-button:hover .button-arrow {
     transform: translateX(-5px);
-    color: var(--primary-blue);
 }
 
 /* ================= Social Media ================= */
+
 .social-section h2,
 .activities h2 {
-    text-align: center;
-    font-size: 15px;
-    color: var(--text-muted);
-    margin-bottom: 16px;
-    font-weight: 700;
     position: relative;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 900;
+    color: var(--blue);
+    margin-bottom: 20px;
 }
 
 .social-section h2 span,
 .activities h2 span {
-    background: var(--bg-dark);
-    padding: 0 12px;
-    position: relative;
-    z-index: 1;
+    background: var(--background);
+    padding: 0 14px;
 }
 
 .social-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 32px;
+    gap: 13px;
+    margin-bottom: 38px;
 }
 
 .social-button {
-    min-height: 80px;
+    min-height: 105px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 1px solid var(--card-border);
-    border-radius: 16px;
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
+    gap: 3px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+
     text-decoration: none;
-    color: var(--text-main);
-    transition: all 0.3s ease;
+    color: var(--blue);
+    transition: 0.25s ease;
 }
 
 .social-button:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.social-button.facebook:hover {
-    border-color: var(--primary-blue);
-    box-shadow: 0 8px 20px -5px rgba(0, 229, 255, 0.3);
-}
-
-.social-button.instagram:hover {
-    border-color: var(--primary-green);
-    box-shadow: 0 8px 20px -5px rgba(0, 255, 136, 0.3);
+    transform: translateY(-4px);
+    border-color: var(--green);
 }
 
 .social-icon {
-    margin-bottom: 4px;
-    color: var(--primary-blue);
+    color: var(--blue);
+    margin-bottom: 5px;
 }
 
 .instagram .social-icon {
-    color: var(--primary-green);
+    color: var(--green);
 }
 
 .social-button span:not(.social-icon) {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .social-button small {
     font-size: 11px;
-    color: var(--text-muted);
+    color: var(--muted);
 }
 
-/* ================= Activities ================= */
+/* ================= Academy Activities ================= */
+
 .activities {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .activity-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 12px;
 }
 
 .activity {
-    position: relative;
-    min-height: 54px;
+    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px 12px;
-    background: var(--card-bg);
-    border-radius: 12px;
-    border: 1px solid var(--card-border);
-    backdrop-filter: blur(12px);
-    color: var(--text-main);
-    font-size: 13px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    padding: 14px;
+    border-radius: 15px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
 }
 
 .activity:hover {
-    border-color: rgba(0, 229, 255, 0.4);
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    border-color: var(--green);
+}
+
+.activity-glow {
+    display: none;
 }
 
 /* ================= Location ================= */
+
 .location {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 14px;
-    background: var(--card-bg);
-    border-radius: 14px;
-    border: 1px solid var(--card-border);
-    margin-bottom: 24px;
+    gap: 10px;
+    padding: 17px;
+    border-radius: 15px;
+
+    background: #EDF4FA;
+    border: 1px solid #DCE9F3;
+    margin-bottom: 28px;
 }
 
 .location-icon {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .location p {
-    font-size: 13px;
-    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue);
 }
 
 /* ================= Footer ================= */
+
 footer {
     text-align: center;
-    color: var(--text-muted);
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
 }
 
 footer p {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 2px;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 5px;
 }
 
 footer span {
     font-family: var(--font-en);
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 1px;
-    color: var(--text-muted);
+    color: var(--muted);
 }
 
-/* ================= Keyframes ================= */
+/* ================= Animations ================= */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(12px);
     }
     to {
         opacity: 1;
@@ -389,21 +373,33 @@ footer span {
     }
 }
 
-@keyframes pulse {
-    0% {
-        opacity: 0.3;
-        transform: scale(0.95);
+/* ================= Responsive ================= */
+
+@media (max-width: 380px) {
+    .page {
+        padding: 30px 15px;
     }
-    100% {
-        opacity: 0.6;
-        transform: scale(1.05);
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .logo-wrapper {
+        width: 125px;
+        height: 125px;
+    }
+
+    .activity {
+        font-size: 12px;
     }
 }
 
-/* Reduced Motion Preference */
 @media (prefers-reduced-motion: reduce) {
-    * {
+    *,
+    *::before,
+    *::after {
         animation: none !important;
         transition: none !important;
+        scroll-behavior: auto !important;
     }
 }
